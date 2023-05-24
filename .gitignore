@@ -1,0 +1,5 @@
+/config/secret.py
+
+db.sqlite3
+
+venv/
