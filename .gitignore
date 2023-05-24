@@ -1,5 +1,7 @@
-/config/secret.py
+.secret.py
 
 db.sqlite3
 
 venv/
+
+__pycache__
