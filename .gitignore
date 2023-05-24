@@ -1,4 +1,5 @@
-.secret.py
+backend/config/secret.py
+
 
 db.sqlite3
 
