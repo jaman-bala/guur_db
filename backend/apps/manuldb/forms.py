@@ -1,4 +1,4 @@
-from .weapons import Weapons
+from backend.apps.weapons.models import Weapons
 
 from django.forms import (
     ModelForm, TextInput,

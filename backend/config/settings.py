@@ -26,6 +26,11 @@ INSTALLED_APPS = [
     # APP
     'backend.apps.manuldb',
     'backend.apps.account',
+    'backend.apps.car',
+    'backend.apps.people',
+    'backend.apps.police',
+    'backend.apps.product',
+    'backend.apps.weapons',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +62,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'backend.config.wsgi.application'
-
 
 
 DATABASES = {

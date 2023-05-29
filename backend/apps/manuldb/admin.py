@@ -1,21 +1,25 @@
 from django.contrib import admin
-from .product import Product
-from .weapons import Weapons
 
 
-@admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+from backend.apps.manuldb.models import Category, State, City
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
     list_display = [
-        'code',
-        'title',
+        'title_category',
     ]
 
 
-@admin.register(Weapons)
-class WeaponAdmin(admin.ModelAdmin):
+@admin.register(City)
+class CityAdmin(admin.ModelAdmin):
     list_display = [
-        'code',
-        'title',
-        'last_name',
-        'first_name',
+        'title_city',
+    ]
+
+
+@admin.register(State)
+class StateAdmin(admin.ModelAdmin):
+    list_display = [
+        'title_state',
     ]

@@ -1,31 +1,58 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html style="font-size: 16px;" lang="ru"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static './src/css/login.css' %}">
-    <title>MVD</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static './src/css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static './src/css/login.css' %}" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 </head>
-<body>
-<log>
-  <form action="" method="POST">
-    {% csrf_token %}
-  <section class="section__one">
-     <div class="container__acc">
-         <div class="logo__image">
-        <img src="{% static './src/logo/Logomvd.png' %}" class="logo__img">
+  <body class="u-body u-xl-mode" data-lang="ru">
+    <section class="u-clearfix u-grey-10 u-section-1" id="sec-e7e1">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-center u-border-2 u-border-grey-10 u-container-style u-group u-white u-group-1">
+          <div class="u-container-layout">
+            <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{% static './src/logo/image.svg' %}" alt="" data-image-width="110" data-image-height="110">
+            <div class="u-form u-form-1">
+              <form action="" method="POST">
+                 {% csrf_token %}
+                  <div class="u-form-group u-form-name">
+                  <label for="name-d498" class="u-label">Логин</label>
+                    {{form.username}}
+                </div>
+                <div class="u-form-email u-form-group">
+                  <label for="email-d498" class="u-label">Пароль</label>
+                    {{form.password}}
+                </div>
+                <div class="align-center">
+                    <button class="u-btn">Вход</button>
+                </div>
+                  <div class="text-center">
+                      <p>Если забыли пароль позвоните по номеру</p>
+                      <p class="post-text">
+                         0312 66 66 66
+                      </p>
+                  </div>
+
+              </form>
+            </div>
           </div>
-      <div class="pasford">
-          <div class="input">
-          {{form.username}}
-           {{form.password}}
+        </div>
       </div>
-          <button class="pasford__btn">Вход</button>
-      </div>
-     </div>
-  </section>
-</form>
-</log>
-</body>
+    </section>
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-10e4"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">ГУУР МВД КР</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+
+      <a class="u-link" href="" target="_blank">
+        <span>Website by GUUR</span>
+      </a>. 
+    </section>
+    <script class="u-script" type="text/javascript" src="{% static './src/js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static './src/js/nicepage.js' %}" defer=""></script>
+</body></html>
