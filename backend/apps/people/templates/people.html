@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+
+    <section class="u-clearfix u-section-1" id="sec-77bd">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-default u-text-1">данные человека</h2>
+        <div class="u-border-2 u-border-grey-25 u-form u-grey-5 u-form-1">
+          <form action="." method="POST">
+            {% csrf_token %}
+            <div class="u-form-group u-form-name">
+              <label for="name-02e7" class="u-label">ИНН</label>
+              {{ form.inn }}
+            </div>
+            <div class="u-form-email u-form-group">
+              <label for="email-02e7" class="u-label">Фамилия</label>
+              {{ form.last_name }}
+            </div>
+            <div class="u-form-group u-form-group-3">
+              <label for="text-3182" class="u-label">Имя</label>
+              {{ form.first_name }}
+            </div>
+            <div class="u-form-group u-form-group-4">
+              <label for="text-b8f3" class="u-label">Отчество</label>
+              {{ form.middle_name }}
+            </div>
+              <div class="u-form-group u-form-select u-form-group-5">
+                <label for="select-1902" class="u-label">Город</label>
+                <div class="u-form-select-wrapper">
+                  <select id="select-1902" name="city" class="u-input u-input-rectangle">
+                    {% for state in form.city %}
+                      <option value="{{ city.id }}" data-calc="">{{ state }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+            <div class="u-form-group u-form-group-6">
+              <label for="text-d487" class="u-label">Адрес</label>
+              {{  form.address}}
+            </div>
+            <div class="u-form-date u-form-group u-form-group-7">
+              <label for="date-7741" class="u-label">Дата рождения</label>
+<!--              <input type="text" readonly="readonly" placeholder="ММ/ДД/ГГГГ" id="date-7741" name="date" class="u-input u-input-rectangle" required="" data-date-format="mm/dd/yyyy">-->
+               {{  form.date }}
+            </div>
+            <div class="u-form-group u-form-group-8">
+              <label for="text-ac7e" class="u-label">Нациогальность</label>
+              {{ form.nationality }}
+            </div>
+           <div class="u-form-group u-form-select u-form-group-9">
+
+          <div class="u-form-select-wrapper">
+            <div>
+              <label for="select-3026" class="u-label">Вложить фото</label>
+              {{ form.image }}
+            </div>
+            <div>
+              <label for="select-3026" class="u-label">Вложить файл</label>
+              {{ form.file }}
+            </div>
+          </div>
+           </div>
+
+
+            <div class="u-border-2 u-border-grey-25 u-expanded-width u-form u-grey-5 u-form-2">
+            <div class="u-form-group u-form-name u-label-top">
+              <label for="name-ef64" class="u-label">Инициатор</label>
+              <input type="text" placeholder="Ф.И.О" id="name-ef64" name="name" class="u-input u-input-rectangle" required="">
+            </div>
+            <div class="u-form-email u-form-group u-label-top">
+              <label for="email-ef64" class="u-label">Должность</label>
+              <input type="email" placeholder="Звание и Должность" id="email-ef64" name="email" class="u-input u-input-rectangle" required="">
+            </div>
+            <div class="u-form-group u-label-top u-form-group-13">
+              <label for="text-f21c" class="u-label">Орган</label>
+              <input type="text" placeholder="Введите орган" id="text-f21c" name="text" class="u-input u-input-rectangle">
+            </div>
+            <div class="u-form-group u-form-submit u-label-top">
+              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
+              <input type="submit" value="submit" class="u-form-control-hidden">
+            </div>
+          </div>
+          </form>
+
+      </div>
+
+    </section>
+    
+{%endblock%}

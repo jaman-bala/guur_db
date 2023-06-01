@@ -18,48 +18,15 @@
               </tr>
             </thead>
             <tbody class="u-grey-5 u-table-body u-table-body-1">
+            {% for peoples in people %}
               <tr style="height: 75px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">1234567899874</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">АКА-47</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Петров Николай Василевич</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">01.01.2023</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.inn }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.address }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.last_name }} {{ peoples.first_name }} {{ peoples.middle_name }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.created }}</td>
               </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> 1234567899874</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">Макарос ПМ</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> Петров Николай Василевич</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> 01.01.2023</td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> 1234567899874</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> Макарос ПМ</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> Петров Николай Василевич</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> 01.01.2023</td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> 1234567899874</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> Макарос ПМ</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> Петров Николай Василевич</td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"> 01.01.2023</td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-              </tr>
-              <tr style="height: 76px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"></td>
-              </tr>
+            {% endfor %}
+
             </tbody>
           </table>
         </div>

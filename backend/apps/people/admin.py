@@ -1,10 +1,15 @@
 from django.contrib import admin
-from backend.apps.people.models import People
-# Register your models here.
+from backend.apps.people.models import People, PeopleImage
+
+
+class PeopleImageInline(admin.StackedInline):
+    model = PeopleImage
+    extra = 3
 
 
 @admin.register(People)
 class PeopleAdmin(admin.ModelAdmin):
+    inlines = [PeopleImageInline]
     list_display = [
         'inn',
         'last_name',

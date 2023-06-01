@@ -1,5 +1,4 @@
 from django.db import models
-from dal import autocomplete
 
 
 from backend.apps.people.models import People
@@ -17,8 +16,8 @@ class Product(models.Model):
     title = models.CharField(verbose_name='Марка', max_length=255, null=True, blank=True)
     erp = models.CharField(verbose_name='Ноомер ЕРП', max_length=255)
     description = models.TextField(verbose_name='Примичание', null=True, blank=True)
-    photo = models.ImageField(verbose_name='Фото', upload_to='src/images/things', null=True, blank=True)
-    file = models.FileField(verbose_name='Файл', upload_to='src/file/things', null=True, blank=True)
+    photo = models.ImageField(verbose_name='Фото', upload_to='src/images/product', null=True, blank=True)
+    file = models.FileField(verbose_name='Файл', upload_to='src/file/product', null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True, verbose_name='Активный')
@@ -38,8 +37,7 @@ class Product(models.Model):
         return str(self.code)
 
 
-
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to="products/images")
+    image = models.ImageField(upload_to="src/images/product")
 

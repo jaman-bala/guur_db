@@ -7,28 +7,28 @@
     <title>Главная</title>
     <link rel="stylesheet" href="{% static './src/css/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static './src/css/index.css' %}" media="screen">
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Главная">
-    <meta property="og:type" content="website">
-      <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+    <link rel="stylesheet" href="{% static './src/css/people.css' %}" media="screen">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
       <body data-home-page="Главная.html"
         data-home-page-title="Главная" class="u-body u-xl-mode"
-        data-lang="ru"><header class="u-box-shadow u-clearfix u-header u-palette-1-base u-header"
+        data-lang="ru">
+    <header class="u-box-shadow u-clearfix u-header u-palette-1-base u-header"
                                id="sec-41cc"><div class="u-clearfix u-sheet u-sheet-1">
         <a href="/" class="u-image u-logo u-image-1" data-image-width="150" data-image-height="150">
           <img src="{% static './src/logo/image.svg' %}"  class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; text-transform: uppercase; font-weight: 500;">
-            <a class="u-button-style u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
               <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g>
+                  <rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
             </g></svg>
-            </a>
+
           </div>
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="Главная.html" style="padding: 10px 20px;">Главная</a>
-            </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="АИС-Оружие.html" style="padding: 10px 20px;">АИС Оружие</a>
+            </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="{% url 'people' %}" style="padding: 10px 20px;">Добавить подозриваемого</a>
             </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="АИС-РУАТ.html" style="padding: 10px 20px;">АИС РУАТ</a>
             </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" target="_blank" style="padding: 10px 20px;">АИС Вещи</a>
             </li></ul>

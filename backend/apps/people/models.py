@@ -30,7 +30,6 @@ class People(models.Model):
     is_active = models.BooleanField(default=True, verbose_name='Активный')
     initiator = models.ForeignKey(Initiator, verbose_name='Инициатор', blank=True, null=True, on_delete=models.CASCADE)
 
-
     class Meta:
         verbose_name = 'добавить'
         verbose_name_plural = 'АИС Персоны'
@@ -39,3 +38,6 @@ class People(models.Model):
         return str(self.inn)
 
 
+class PeopleImage(models.Model):
+    people = models.ForeignKey(People, verbose_name="Фото", on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='src/images/people')

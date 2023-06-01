@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('backend.apps.account.urls')),
     path('base/', include('backend.apps.manuldb.urls')),
+    path('people/', include('backend.apps.people.urls')),
 
 
 
