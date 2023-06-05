@@ -13,31 +13,22 @@ class IndexView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['people'] = People.objects.all()
+        people = People.objects.all()
+        weapons = Weapons.objects.all()
+        context = {
+            "people": people,
+            "weapons": weapons,
+        }
         return context
 
 
+class IndexDetail(DetailView):
+    model = People.objects.all()
+    template_name = 'people_info.html'
+    context_object_name = 'people_information'
+    success_url = reverse_lazy('people_info')
+    queryset = People.objects.all()
 
-# class WeaponsView(ListView):
-#         model = Weapons
-#         template_name = 'weapons.html'
-#         context_object_name = 'weapons'
-#         paginate_by = 70
-#
-#
-#
-# class WeaponsDetailView(DetailView):
-#         model = Weapons
-#         template_name = 'details_weapons.html'
-#         context_object_name = 'weaponsout'
-#         queryset = Weapons.objects.all()
-#
-#
-# class CartView(ListView):
-#     model = Car
-#     template_name = 'products.html'
-#     context_object_name = 'products'
-#     paginate_by = 70
-#     queryset = Car.objects.all()
+
 
 

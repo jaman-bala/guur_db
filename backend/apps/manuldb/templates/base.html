@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static './src/css/nicepage.css' %}" media="screen">
     <link rel="stylesheet" href="{% static './src/css/index.css' %}" media="screen">
     <link rel="stylesheet" href="{% static './src/css/people.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static './src/css/code.css' %}" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
       <body data-home-page="Главная.html"
@@ -15,7 +16,7 @@
         data-lang="ru">
     <header class="u-box-shadow u-clearfix u-header u-palette-1-base u-header"
                                id="sec-41cc"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="/" class="u-image u-logo u-image-1" data-image-width="150" data-image-height="150">
+        <a href="{% url 'index' %}" class="u-image u-logo u-image-1" data-image-width="150" data-image-height="150">
           <img src="{% static './src/logo/image.svg' %}"  class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -27,7 +28,7 @@
 
           </div>
           <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="Главная.html" style="padding: 10px 20px;">Главная</a>
+            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="{% url 'index' %}" style="padding: 10px 20px;">Главная</a>
             </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="{% url 'people' %}" style="padding: 10px 20px;">Добавить подозриваемого</a>
             </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" href="АИС-РУАТ.html" style="padding: 10px 20px;">АИС РУАТ</a>
             </li><li class="u-nav-item"><a class="u-active-palette-1-base u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-hover-palette-1-light-1 u-nav-link u-text-active-white u-text-hover-white" target="_blank" style="padding: 10px 20px;">АИС Вещи</a>

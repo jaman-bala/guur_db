@@ -20,7 +20,7 @@
             <tbody class="u-grey-5 u-table-body u-table-body-1">
             {% for peoples in people %}
               <tr style="height: 75px;">
-                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.inn }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell"><a href="{% url 'people_detail' peoples.id %}">{{ peoples.inn }}</a></td>
                 <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.address }}</td>
                 <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.last_name }} {{ peoples.first_name }} {{ peoples.middle_name }}</td>
                 <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ peoples.created }}</td>
@@ -29,8 +29,40 @@
 
             </tbody>
           </table>
+
         </div>
+      <div class="u-expanded-width u-table u-table-responsive u-table-1">
+        <table class="u-table-entity u-table-entity-1">
+            <colgroup>
+              <col width="25%">
+              <col width="25%">
+              <col width="25%">
+              <col width="25%">
+            </colgroup>
+            <thead class="u-palette-1-base u-table-header u-table-header-1">
+              <tr style="height: 21px;">
+                <th class="u-border-1 u-border-grey-50 u-table-cell">Серийный номер</th>
+                <th class="u-border-1 u-border-grey-50 u-table-cell">Марка</th>
+                <th class="u-border-1 u-border-grey-50 u-table-cell">Владелец</th>
+                <th class="u-border-1 u-border-grey-50 u-table-cell">Дата</th>
+              </tr>
+            </thead>
+            <tbody class="u-grey-5 u-table-body u-table-body-1">
+            {% for wea in weapons %}
+              <tr style="height: 75px;">
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ wea.code }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ wea.erp }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ wea.title }}</td>
+                <td class="u-border-2 u-border-grey-40 u-border-no-left u-border-no-right u-table-cell">{{ wea.created }}</td>
+              </tr>
+            {% endfor %}
+
+            </tbody>
+          </table>
+
       </div>
+      </div>
+
     </section>
     <section class="u-align-center u-clearfix u-section-2" id="sec-539e">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">

@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+    <main>
+        <section class="section__one">
+            <div class="container">
+                <div class="card">
+                    <div class="qr__code">
+                        {% if people_information.image %}
+                        <img src="{{ people_information.image.url }}" alt="IMAGE">
+                        <div class="link_download_code"> <a class="download_code" href="{{ people_information.image.url }}" download="{{ people_information.image.url }}">Скачать</a>
+                        </div>
+                        {% else %}
+                        <img src="{% static './src/logo/user-placeholder.jpg' %}" alt="No Image">
+                        {% endif%}
+                    </div>
+
+                    <div class="infor">
+                        <div class="dogovor">
+                            <p class="dogovor__p">{{people_information.inn }}</p>
+                        </div>
+                        <div class="name">
+                            <p class="name__p">{{ people_information.first_name }} {{ people_information.last_name }} {{ people_information.middle_name }}</p>
+                        </div>
+                        <div class="number">
+                            <p class="number__p">{{ people_information.nationality }}</p>
+                        </div>
+                        <div class="number">
+                            <p class="number__p">{{ people_information.city }}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% endblock %}
