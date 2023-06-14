@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    title_category = models.CharField("виды", max_length=50, unique=True)
+    title_category = models.CharField("виды", max_length=250, unique=True)
 
     class Meta:
         verbose_name = "деятельность"
@@ -13,7 +13,7 @@ class Category(models.Model):
 
 
 class City(models.Model):
-    title_city = models.CharField("Область", max_length=50, unique=True)
+    title_city = models.CharField("Область", max_length=250, unique=True)
 
     class Meta:
         verbose_name = "область"
@@ -25,7 +25,7 @@ class City(models.Model):
 
 class State(models.Model):
     city_title = models.ForeignKey(City, on_delete=models.CASCADE)
-    title_state = models.CharField('Город, район', max_length=50)
+    title_state = models.CharField('Город, район', max_length=250)
 
     class Meta:
         verbose_name = "город"
@@ -35,7 +35,16 @@ class State(models.Model):
         return self.title_state
 
 
+class Vid(models.Model):
+    vid_title = models.ForeignKey(Category, verbose_name="Вид преступления", on_delete=models.CASCADE)
+    title_number = models.CharField('Номер уголовного дела', max_length=250)
 
+    class Meta:
+        verbose_name = "номер"
+        verbose_name_plural = "Номер уголовного дела"
+
+    def __str__(self):
+        return self.title_number
 
 
 

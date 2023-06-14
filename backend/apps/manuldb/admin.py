@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from backend.apps.manuldb.models import Category, State, City
+from backend.apps.manuldb.models import Category, State, City, Vid
 
 
 @admin.register(Category)
@@ -22,4 +22,11 @@ class CityAdmin(admin.ModelAdmin):
 class StateAdmin(admin.ModelAdmin):
     list_display = [
         'title_state',
+    ]
+
+
+@admin.register(Vid)
+class VidAdmin(admin.ModelAdmin):
+    list_display = [
+        'title_number',
     ]

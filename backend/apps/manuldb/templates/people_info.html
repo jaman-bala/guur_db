@@ -1,38 +1,45 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
-    <main>
-        <section class="section__one">
-            <div class="container">
-                <div class="card">
-                    <div class="qr__code">
-                        {% if people_information.image %}
-                        <img src="{{ people_information.image.url }}" alt="IMAGE">
-                        <div class="link_download_code"> <a class="download_code" href="{{ people_information.image.url }}" download="{{ people_information.image.url }}">Скачать</a>
-                        </div>
-                        {% else %}
-                        <img src="{% static './src/logo/user-placeholder.jpg' %}" alt="No Image">
-                        {% endif%}
-                    </div>
 
-                    <div class="infor">
-                        <div class="dogovor">
-                            <p class="dogovor__p">{{people_information.inn }}</p>
-                        </div>
-                        <div class="name">
-                            <p class="name__p">{{ people_information.first_name }} {{ people_information.last_name }} {{ people_information.middle_name }}</p>
-                        </div>
-                        <div class="number">
-                            <p class="number__p">{{ people_information.nationality }}</p>
-                        </div>
-                        <div class="number">
-                            <p class="number__p">{{ people_information.city }}</p>
-                        </div>
 
-                    </div>
+<div class="container px-4 mt-5">
+<div class="card mb-3" style="max-width: 840px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+        {% if people_information.image %}
+      <img src="{{ people_information.image.url }}" class="img-fluid rounded-start p-2" alt="IMAGE">
+        {% else %}
+        <img src="{% static './src/logo/user-placeholder.jpg' %}" class="img-fluid rounded-start p-2" alt="No Image">
+        {% endif%}
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ people_information.first_name }} {{ people_information.last_name }} {{ people_information.middle_name }}</h5>
+        <p class="card-text">ИНН:   <small class="text-body-secondary">{{people_information.inn }}</small></p>
+        <p class="card-text">Область:   <small class="text-body-secondary">{{people_information.city}}</small></p>
+          <p class="card-text">Адрес:   <small class="text-body-secondary">{{people_information.address}}</small></p>
+          <p class="card-text">Дата рождения:   <small class="text-body-secondary">{{people_information.date}}</small></p>
+          <p class="card-text">Национальность:   <small class="text-body-secondary text-border">{{people_information.nationality }}</small></p>
+        <p class="card-text">Дело: <small class="text-body-secondary">{{people_information.status }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="container px-4 mt-5">
+<div class="card mb-3" style="max-width: 340px;">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+          <p class="card-text">Предметы: <small class="text-body-secondary">{{people_information.products }}</small></p>
+          <p class="card-text">Машина: <small class="text-body-secondary">{{people_information.car }}</small></p>
+          <p class="card-text">Оружие: <small class="text-body-secondary">{{people_information.weapon }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 
     {% endblock %}

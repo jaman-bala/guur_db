@@ -1,17 +1,17 @@
 from django.db import models
 
 
-from backend.apps.people.models import People
+# from backend.apps.people.models import People
 from backend.apps.police.models import Initiator
 
 
 class Product(models.Model):
-    people = models.ForeignKey(
-        People,
-        verbose_name="Персон",
-        on_delete=models.SET_NULL,
-        null=True,
-    )
+    # people = models.ForeignKey(
+    #     People,
+    #     verbose_name="Персон",
+    #     on_delete=models.CASCADE,
+    #     null=True,
+    # )
     code = models.CharField(verbose_name='Серийный номер', max_length=255, unique=True)
     title = models.CharField(verbose_name='Марка', max_length=255, null=True, blank=True)
     erp = models.CharField(verbose_name='Ноомер ЕРП', max_length=255)

@@ -1,12 +1,12 @@
 from django.db import models
 
 
-from backend.apps.people.models import People
+# from backend.apps.people.models import People
 from backend.apps.police.models import Initiator
 
 
 class Car(models.Model):
-    people = models.ForeignKey(People, verbose_name="Персон", on_delete=models.SET_NULL, null=True)
+    # people = models.ForeignKey(People, verbose_name="Персон", on_delete=models.SET_NULL, null=True)
     brand = models.CharField(max_length=255, verbose_name='Марка машины')
     vin_number = models.CharField(max_length=255, verbose_name='ВИН номер', unique=True, null=True, blank=True)
     number = models.CharField(max_length=255, verbose_name='ГОС номер', unique=True, null=True, blank=True)
