@@ -10,24 +10,23 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">ИНН</th>
-      <th scope="col">ФИО</th>
-      <th scope="col">Номер уголовного дела</th>
-      <th scope="col">Вид</th>
+      <th scope="col">Вин номер</th>
+      <th scope="col">Марка машины</th>
+      <th scope="col">ГОС номер</th>
     </tr>
   </thead>
-        {% for peoples in people %}
+        {% for cars in car %}
   <tbody>
     <tr>
-      <th scope="row">{{ peoples.id }}</th>
-      <td><a href="{% url 'people_detail' peoples.id %}">{{ peoples.inn }}</a></td>
-      <td>{{ peoples.last_name }} {{ peoples.first_name }} {{ peoples.middle_name }}</td>
-      <td>{{ peoples.vidy }}</td>
-      <td>{{ peoples.title_category }}</td>
+      <th scope="row">{{ cars.id }}</th>
+      <td><a href="{% url 'car_detail' cars.id %}">{{ cars.vin_number }}</a></td>
+      <td>{{ cars.brand }}</td>
+      <td>{{ cars.number }}</td>
     </tr>
   </tbody>
         {% endfor %}
 </table>
 </div>
 
-{%endblock%}
+
+    {%endblock%}

@@ -1,5 +1,7 @@
 from django.db import models
 
+from backend.apps.people.models import People
+
 
 class Category(models.Model):
     title_category = models.CharField("виды", max_length=250, unique=True)
@@ -10,29 +12,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title_category
-
-
-class City(models.Model):
-    title_city = models.CharField("Область", max_length=250, unique=True)
-
-    class Meta:
-        verbose_name = "область"
-        verbose_name_plural = "Область"
-
-    def __str__(self):
-        return self.title_city
-
-
-class State(models.Model):
-    city_title = models.ForeignKey(City, on_delete=models.CASCADE)
-    title_state = models.CharField('Город, район', max_length=250)
-
-    class Meta:
-        verbose_name = "город"
-        verbose_name_plural = "Город"
-
-    def __str__(self):
-        return self.title_state
 
 
 class Vid(models.Model):
@@ -46,6 +25,19 @@ class Vid(models.Model):
     def __str__(self):
         return self.title_number
 
+
+class Relatives(models.Model):
+    who = models.CharField(verbose_name='Кто', max_length=255, null=True, blank=True)
+    relatives = models.ManyToManyField(People, verbose_name="Родственник", related_name="related_people")
+    person = models.ForeignKey(People, verbose_name="Человек", related_name="relatives", on_delete=models.CASCADE)
+
+
+class PeopleImage(models.Model):
+    people = models.ForeignKey(People, verbose_name="Фото", on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='src/images/people', verbose_name="Фото")
+
+    class Meta:
+        verbose_name = "Добавить дополнительные фотографии"
 
 
 
