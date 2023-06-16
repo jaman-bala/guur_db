@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # from backend.apps.people.models import People
 from backend.apps.police.models import Initiator
 

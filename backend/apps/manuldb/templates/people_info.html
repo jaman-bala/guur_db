@@ -1,45 +1,82 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
 
-
 <div class="container px-4 mt-5">
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4" style="width: 280px; height: 290px;">
-        {% if people_information.image %}
-      <img src="{{ people_information.image.url }}" class="img-fluid rounded-start p-2" alt="IMAGE">
-        {% else %}
-        <img src="{% static './src/logo/user-placeholder.jpg' %}" class="img-fluid rounded-start p-2" alt="No Image">
-        {% endif%}
+    <div class="card mb-3" style="max-width: 640px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                {% if people_information.image %}
+                <img src="{{ people_information.image.url }}" class="img-fluid rounded-start p-2"
+                     style="width: 280px; height: 290px;" alt="IMAGE">
+                {% else %}
+                <img src="{% static './src/logo/user-placeholder.jpg' %}" class="img-fluid rounded-start p-2"
+                     alt="No Image">
+                {% endif%}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ people_information.first_name }} {{ people_information.last_name }} {{people_information.middle_name }}</h5>
+                    <p class="card-text">ИНН: <small class="text-body-secondary">{{people_information.inn}}</small></p>
+                    <p class="card-text">Область: <small class="text-body-secondary">{{people_information.city}}</small>
+                    </p>
+                    <p class="card-text">Адрес: <small
+                            class="text-body-secondary">{{people_information.address}}</small></p>
+                    <p class="card-text">Дата рождения: <small
+                            class="text-body-secondary">{{people_information.date}}</small></p>
+                    <p class="card-text">Национальность: <small class="text-body-secondary text-border">{{ people_information.nationality }}</small></p>
+
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ people_information.first_name }} {{ people_information.last_name }} {{ people_information.middle_name }}</h5>
-        <p class="card-text">ИНН:   <small class="text-body-secondary">{{people_information.inn }}</small></p>
-        <p class="card-text">Область:   <small class="text-body-secondary">{{people_information.city}}</small></p>
-          <p class="card-text">Адрес:   <small class="text-body-secondary">{{people_information.address}}</small></p>
-          <p class="card-text">Дата рождения:   <small class="text-body-secondary">{{people_information.date}}</small></p>
-          <p class="card-text">Национальность:   <small class="text-body-secondary text-border">{{people_information.nationality }}</small></p>
-        <p class="card-text">Дело: <small class="text-body-secondary">{{people_information.status }}</small></p>
-      </div>
+
+    <div class="card mb-3" style="max-width: 440px;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <p class="card-text">Дело: <small class="text-body-secondary">{{people_information.status }}</small>
+                    </p>
+                    <p class="card-text">Машина: <small class="text-body-secondary">{{people_information.car }}</small>
+                    </p>
+                    <p class="card-text">Оружие: <small class="text-body-secondary">{{people_information.weapon }}</small></p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+     {% for people_image in people_images %}
+    <div class="card mb-5 d-flex" style="width: 15rem;">
+        <img src="{{ people_image.image.url }}" class="card-img-top" >
+    </div>
+        {% endfor %}
+    <div class="card mb-3" style="max-width: 640px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                {% if people_information.image %}
+                <img src="{{ people_information.image.url }}" class="img-fluid rounded-start p-2"
+                     style="width: 280px; height: 290px;" alt="IMAGE">
+                {% else %}
+                <img src="{% static './src/logo/user-placeholder.jpg' %}" class="img-fluid rounded-start p-2"
+                     alt="No Image">
+                {% endif%}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ people_information.first_name }} {{ people_information.last_name }} {{ people_information.middle_name }}</h5>
+                    <p class="card-text">ИНН: <small class="text-body-secondary">{{people_information.inn}}</small></p>
+                    <p class="card-text">Область: <small class="text-body-secondary">{{people_information.city}}</small>
+                    </p>
+                    <p class="card-text">Адрес: <small
+                            class="text-body-secondary">{{people_information.address}}</small></p>
+                    <p class="card-text">Дата рождения: <small
+                            class="text-body-secondary">{{people_information.date}}</small></p>
+                    <p class="card-text">Национальность: <small class="text-body-secondary text-border">{{ people_information.nationality }}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
-<div class="container px-4 mt-5">
-<div class="card mb-3" style="max-width: 340px;">
-  <div class="row g-0">
-    <div class="col-md-8">
-      <div class="card-body">
-          <p class="card-text">Предметы: <small class="text-body-secondary">{{people_information.products }}</small></p>
-          <p class="card-text">Машина: <small class="text-body-secondary">{{people_information.car }}</small></p>
-          <p class="card-text">Оружие: <small class="text-body-secondary">{{people_information.weapon }}</small></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
-
-    {% endblock %}
+{% endblock %}

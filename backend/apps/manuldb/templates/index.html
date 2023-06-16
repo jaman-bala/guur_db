@@ -2,32 +2,32 @@
 
 
 <div class="container px-4 mt-5">
-     <form class="d-flex mb-4" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-     </form>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">ИНН</th>
-      <th scope="col">ФИО</th>
-      <th scope="col">Номер уголовного дела</th>
-      <th scope="col">Вид</th>
-    </tr>
-  </thead>
+    <form class="d-flex mb-4" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ИНН</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Номер уголовного дела</th>
+            <th scope="col">Вид</th>
+        </tr>
+        </thead>
         {% for peoples in people %}
-  <tbody>
-    <tr>
-      <th scope="row">{{ peoples.id }}</th>
-      <td><a href="{% url 'people_detail' peoples.id %}">{{ peoples.inn }}</a></td>
-      <td>{{ peoples.last_name }} {{ peoples.first_name }} {{ peoples.middle_name }}</td>
-      <td>{{ peoples.vidy }}</td>
-      <td>{{ peoples.title_category }}</td>
-    </tr>
-  </tbody>
+        <tbody>
+        <tr>
+            <th scope="row">{{ peoples.id }}</th>
+            <td><a href="{% url 'people_detail' peoples.id %}">{{ peoples.inn }}</a></td>
+            <td>{{ peoples.last_name }} {{ peoples.first_name }} {{ peoples.middle_name }}</td>
+            <td>{{ peoples.vidy }}</td>
+            <td>{{ peoples.title_category }}</td>
+        </tr>
+        </tbody>
         {% endfor %}
-</table>
+    </table>
 </div>
 
 {%endblock%}

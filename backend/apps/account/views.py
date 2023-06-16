@@ -28,4 +28,4 @@ def sign_in(request):
 
 
 def error(request):
-    return render (request, 'error404.html')
+    return render(request, 'error404.html')

@@ -1,4 +1,5 @@
-from backend.apps.manuldb.models import Category
+from django.shortcuts import render
+from backend.apps.manuldb.models import Category, PeopleImage
 
 
 def category_context_get(request):
@@ -6,4 +7,6 @@ def category_context_get(request):
     return {'categories': categories}
 
 
-
+def people_image_get(request):
+    people_images = PeopleImage.objects.all()
+    return {'people_images': people_images}

@@ -27,4 +27,3 @@ class CarDetail(DetailView):
     contex_name = 'car_detail'
     success_url = reverse_lazy('car')
     queryset = Car.objects.all()
-

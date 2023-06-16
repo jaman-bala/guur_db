@@ -39,4 +39,3 @@ class PeopleAdmin(admin.ModelAdmin):
         'middle_name',
         'created'
     ]
-

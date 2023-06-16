@@ -38,12 +38,3 @@ class PeopleImage(models.Model):
 
     class Meta:
         verbose_name = "Добавить дополнительные фотографии"
-
-
-
-
-
-
-
-
-

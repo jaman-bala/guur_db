@@ -2,31 +2,31 @@
 
 
 <div class="container px-4 mt-5">
-     <form class="d-flex mb-4" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-     </form>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Вин номер</th>
-      <th scope="col">Марка машины</th>
-      <th scope="col">ГОС номер</th>
-    </tr>
-  </thead>
+    <form class="d-flex mb-4" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Вин номер</th>
+            <th scope="col">Марка машины</th>
+            <th scope="col">ГОС номер</th>
+        </tr>
+        </thead>
         {% for cars in car %}
-  <tbody>
-    <tr>
-      <th scope="row">{{ cars.id }}</th>
-      <td><a href="{% url 'car_detail' cars.id %}">{{ cars.vin_number }}</a></td>
-      <td>{{ cars.brand }}</td>
-      <td>{{ cars.number }}</td>
-    </tr>
-  </tbody>
+        <tbody>
+        <tr>
+            <th scope="row">{{ cars.id }}</th>
+            <td><a href="{% url 'car_detail' cars.id %}">{{ cars.vin_number }}</a></td>
+            <td>{{ cars.brand }}</td>
+            <td>{{ cars.number }}</td>
+        </tr>
+        </tbody>
         {% endfor %}
-</table>
+    </table>
 </div>
 
 
-    {%endblock%}
+{%endblock%}
