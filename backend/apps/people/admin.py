@@ -11,16 +11,20 @@ class RelativesInline(admin.StackedInline):
 
 
 class PeopleImageInline(admin.StackedInline):
+    readonly_fields = ["Фотографии"]
     model = PeopleImage
     extra = 3
+
+    def Фотографии(self, obj):
+        return mark_safe(f'<img src="{obj.image_college.url}" style="max-height: 330px;">')
 
 
 @admin.register(People)
 class PeopleAdmin(admin.ModelAdmin):
     inlines = [PeopleImageInline, RelativesInline]
-    readonly_fields = ["avatar"]
+    readonly_fields = ["Аватар"]
 
-    def avatar(self, obj):
+    def Аватар(self, obj):
         return mark_safe(f'<img src="{obj.image.url}" style="max-height: 330px;">')
 
     list_display = [
@@ -29,7 +33,6 @@ class PeopleAdmin(admin.ModelAdmin):
         'first_name',
         'middle_name',
         'created',
-        'image',
     ]
 
     search_fields = [

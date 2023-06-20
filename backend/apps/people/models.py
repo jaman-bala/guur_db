@@ -1,8 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-from backend.apps.police.models import Initiator
-
+from backend.apps.manuldb.case import Case
 
 class People(models.Model):
     STATUS_CHOICES = (
@@ -11,6 +10,7 @@ class People(models.Model):
         ('Остановлено', 'Остановлено'),
         ('Передано в суд', 'Передано в суд')
     )
+    status_number = models.ForeignKey(Case, verbose_name='Номер уголовного дело', on_delete=models.CASCADE)
     image = models.ImageField(verbose_name='Фото', blank=True, null=True, upload_to='src/images/people')
     inn = models.DecimalField(max_digits=14, decimal_places=0, verbose_name='ИНН', unique=True)
     last_name = models.CharField(verbose_name='Фамилия', max_length=255, null=True, blank=True)
@@ -23,13 +23,12 @@ class People(models.Model):
                               default='Ещё не установлено')
 
     created = models.DateTimeField(auto_now_add=True)
-    initiator = models.ForeignKey(Initiator, verbose_name='Инициатор', blank=True, null=True, on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True, verbose_name='Активный')
 
     class Meta:
         ordering = ["-created"]
         verbose_name = 'добавить'
-        verbose_name_plural = 'АИС Персоны'
+        verbose_name_plural = 'Данные подозреваемого'
 
     def __str__(self):
         return str(self.inn)

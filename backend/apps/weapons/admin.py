@@ -10,3 +10,9 @@ class WeaponAdmin(admin.ModelAdmin):
         'erp',
         'created',
     ]
+    search_fields = [
+        'code',
+        'title',
+        'erp',
+        'created'
+    ]

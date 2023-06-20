@@ -15,7 +15,11 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'erp',
     ]
-
+    search_fields = [
+        'code',
+        'title',
+        'created'
+    ]
 
 # {% for p in products %}
 #     {% for i in p.images.all %}

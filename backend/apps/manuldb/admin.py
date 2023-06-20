@@ -1,17 +1,21 @@
 from django.contrib import admin
 
-from backend.apps.manuldb.models import Category, Vid
+from backend.apps.manuldb.case import Case, View
 
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(View)
+class ViewAdmin(admin.ModelAdmin):
     list_display = [
         'title_category',
     ]
 
 
-@admin.register(Vid)
-class VidAdmin(admin.ModelAdmin):
+@admin.register(Case)
+class CaseAdmin(admin.ModelAdmin):
     list_display = [
         'title_number',
     ]
+
+
+
+
