@@ -5,7 +5,7 @@ from backend.apps.people.models import People
 
 class Relatives(models.Model):
     who = models.CharField(verbose_name='Кто', max_length=255, null=True, blank=True)
-    relatives = models.ManyToManyField(People, verbose_name="Родственник", related_name="related_people")
+    relatives = models.ManyToManyField(People, verbose_name="Информация", related_name="related_people")
     person = models.ForeignKey(People, verbose_name="Человек", related_name="relatives", on_delete=models.CASCADE)
 
     class Meta:

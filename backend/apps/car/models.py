@@ -2,18 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from backend.apps.people.models import People
-from backend.apps.manuldb.case import Case
 
 
 class Car(models.Model):
-    status_number = models.ForeignKey(Case, verbose_name='Номер уголовного дело', on_delete=models.CASCADE)
+    fabula = models.TextField(verbose_name="Фабула", null=True, blank=True)
     people = models.ManyToManyField(People, verbose_name="Персон", null=True, blank=True)
-    brand = models.CharField(max_length=255, verbose_name='Марка машины')
-    vin_number = models.CharField(max_length=255, verbose_name='ВИН номер', unique=True, null=True, blank=True)
+    brand = models.CharField(max_length=255, verbose_name='Марка машины', null=True, blank=True)
+    vin_number = models.CharField(max_length=255, verbose_name='Номер', unique=True, null=True, blank=True)
     number = models.CharField(max_length=255, verbose_name='ГОС номер', unique=True, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
-    is_active = models.BooleanField(default=True, verbose_name='Активный')
 
     class Meta:
         verbose_name = 'добавить'

@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
+from django.contrib.auth import get_user
 
 from backend.apps.manuldb.models import PeopleImage, Relatives
 from backend.apps.people.models import People
@@ -42,3 +43,12 @@ class PeopleAdmin(admin.ModelAdmin):
         'middle_name',
         'created'
     ]
+
+    def get_queryset(self, request):
+        self.request = request
+        return super().get_queryset(request)
+
+    def current_user(self, obj):
+        user = get_user(self.request)
+        return user.username if user.is_authenticated else 'Anonymous'
+    current_user.short_description = 'Добавлено пользователем'

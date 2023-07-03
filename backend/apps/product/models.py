@@ -1,12 +1,11 @@
 from django.db import models
 
 
-from backend.apps.manuldb.case import Case
 from backend.apps.people.models import People
 
 
 class Product(models.Model):
-    status_number = models.ForeignKey(Case, verbose_name='Номер уголовного дело', on_delete=models.CASCADE)
+    fabula = models.TextField(verbose_name="Фабула", null=True, blank=True)
     people = models.ManyToManyField(People, verbose_name="Персон", null=True, blank=True)
     code = models.CharField(verbose_name='Серийный номер', max_length=255, unique=True)
     title = models.CharField(verbose_name='Марка', max_length=255, null=True, blank=True)
@@ -14,7 +13,6 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Примичание', null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
-    is_active = models.BooleanField(default=True, verbose_name='Активный')
 
     class Meta:
         ordering = ['-created']

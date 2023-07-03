@@ -4,4 +4,4 @@ from django.apps import AppConfig
 class ProductConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'backend.apps.product'
-    verbose_name = 'Вещи'
+    verbose_name = 'БАЗА ВЕЩЕЙ'

@@ -9,7 +9,7 @@ from backend.apps.car.models import Car, CarImage
 class CarImageInline(admin.StackedInline):
     readonly_fields = ["Фотографии"]
     model = CarImage
-    extra = 3
+    extra = 2
 
     def Фотографии(self, obj):
         return mark_safe(f'<img src="{obj.image_car.url}" style="max-height: 330px;">')
@@ -22,7 +22,6 @@ class CarAdmin(admin.ModelAdmin):
         'brand',
         'vin_number',
         'number',
-        'status_number',
         'current_user',
     ]
 
@@ -30,7 +29,6 @@ class CarAdmin(admin.ModelAdmin):
         'brand',
         'vin_number',
         'number',
-        'status_number',
         'created'
         'current_user__username',
     ]
