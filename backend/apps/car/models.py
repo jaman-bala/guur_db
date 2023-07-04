@@ -6,7 +6,7 @@ from backend.apps.people.models import People
 
 class Car(models.Model):
     fabula = models.TextField(verbose_name="Фабула", null=True, blank=True)
-    people = models.ManyToManyField(People, verbose_name="Персон", null=True, blank=True)
+    people = models.ManyToManyField(People, verbose_name="Подозреваемый", null=True, blank=True)
     brand = models.CharField(max_length=255, verbose_name='Марка машины', null=True, blank=True)
     vin_number = models.CharField(max_length=255, verbose_name='Номер', unique=True, null=True, blank=True)
     number = models.CharField(max_length=255, verbose_name='ГОС номер', unique=True, null=True, blank=True)

@@ -28,11 +28,14 @@ class PeopleAdmin(admin.ModelAdmin):
     def Аватар(self, obj):
         return mark_safe(f'<img src="{obj.image.url}" style="max-height: 330px;">')
 
+
+
     list_display = [
         'inn',
         'last_name',
         'first_name',
         'middle_name',
+        'current_user',
         'created',
     ]
 
@@ -52,3 +55,7 @@ class PeopleAdmin(admin.ModelAdmin):
         user = get_user(self.request)
         return user.username if user.is_authenticated else 'Anonymous'
     current_user.short_description = 'Добавлено пользователем'
+
+
+admin.site.site_header = 'БИРДИКТУУ БАЗА'
+admin.site.index_title = 'СПИСОК БАЗЫ'
