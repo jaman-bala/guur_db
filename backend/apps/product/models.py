@@ -12,7 +12,7 @@ class Product(models.Model):
     erp = models.CharField(verbose_name='Ноомер ЕРП', max_length=255)
     description = models.TextField(verbose_name='Примичание', null=True, blank=True)
 
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
 
     class Meta:
         ordering = ['-created']

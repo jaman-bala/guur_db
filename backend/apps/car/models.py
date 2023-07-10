@@ -11,7 +11,7 @@ class Car(models.Model):
     vin_number = models.CharField(max_length=255, verbose_name='Номер', unique=True, null=True, blank=True)
     number = models.CharField(max_length=255, verbose_name='ГОС номер', unique=True, null=True, blank=True)
 
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
 
     class Meta:
         verbose_name = 'добавить'

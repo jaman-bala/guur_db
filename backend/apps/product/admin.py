@@ -22,10 +22,13 @@ class ProductAdmin(admin.ModelAdmin):
         'code',
         'title',
         'erp',
+        'created'
     ]
     search_fields = [
         'code',
         'title',
+        'fabula',
+        'erp',
         'created'
     ]
 

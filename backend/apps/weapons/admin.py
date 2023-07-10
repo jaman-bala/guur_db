@@ -27,6 +27,7 @@ class WeaponAdmin(admin.ModelAdmin):
         'code',
         'title',
         'erp',
+        'fabula',
         'created'
     ]
 

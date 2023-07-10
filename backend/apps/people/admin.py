@@ -35,8 +35,8 @@ class PeopleAdmin(admin.ModelAdmin):
         'last_name',
         'first_name',
         'middle_name',
-        'current_user',
         'created',
+        'current_user',
     ]
 
     search_fields = [

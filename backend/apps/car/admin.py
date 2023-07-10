@@ -22,6 +22,7 @@ class CarAdmin(admin.ModelAdmin):
         'brand',
         'vin_number',
         'number',
+        'created',
         'current_user',
     ]
 
@@ -29,8 +30,8 @@ class CarAdmin(admin.ModelAdmin):
         'brand',
         'vin_number',
         'number',
+        'fabula',
         'created'
-        'current_user__username',
     ]
 
     def get_queryset(self, request):
