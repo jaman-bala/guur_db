@@ -14,10 +14,10 @@ services:
     env_file: .env
     ports:
       - 127.0.0.1:8000:8000
-    links:
-      - db
-    depends_on:
-      - db
+#    links:
+#      - db
+#    depends_on:
+#      - db
 
 #  db:
 #    container_name: guur_db
