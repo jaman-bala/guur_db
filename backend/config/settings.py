@@ -21,12 +21,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'simple_history',
 
     # APP
     'backend.apps.manuldb',
     'backend.apps.account',
     'backend.apps.car',
     'backend.apps.people',
+    'backend.apps.police',
     'backend.apps.product',
     'backend.apps.weapons',
 ]
@@ -91,7 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
