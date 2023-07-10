@@ -21,14 +21,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'simple_history',
 
     # APP
     'backend.apps.manuldb',
     'backend.apps.account',
     'backend.apps.car',
     'backend.apps.people',
-    'backend.apps.police',
     'backend.apps.product',
     'backend.apps.weapons',
 ]
