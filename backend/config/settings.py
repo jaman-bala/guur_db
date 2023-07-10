@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-from .secret import SECRET_TOKEN
+from backend.config.secret import SECRET_TOKEN
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
