@@ -91,6 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
