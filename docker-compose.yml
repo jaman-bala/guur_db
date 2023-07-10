@@ -19,15 +19,15 @@ services:
     depends_on:
       - db
 
-  db:
-    container_name: guur_db
-    restart: always
-    image: postgres:12.4-alpine
-    volumes:
-      - postgres-data:/var/lib/postgresql/data/
-    env_file: .env
-    expose:
-      - 5434
-
-volumes:
-  postgres-data:
+#  db:
+#    container_name: guur_db
+#    restart: always
+#    image: postgres:12.4-alpine
+#    volumes:
+#      - postgres-data:/var/lib/postgresql/data/
+#    env_file: .env
+#    expose:
+#      - 5434
+#
+#volumes:
+#  postgres-data:
