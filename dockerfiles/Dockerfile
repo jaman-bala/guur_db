@@ -4,7 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV TZ=Asia/Bishkek
 
 RUN apk add --no-cache jpeg-dev \
-    gcc postgresql-dev \
+    gcc postgresql-dev \ tzdata \
     linux-headers musl-dev libffi-dev \
     libxml2-dev libxslt-dev imagemagick-dev \
     zlib-dev py3-magic  make \
